@@ -6,18 +6,21 @@
 //
 
 import SwiftUI
-
+import SplineRuntime
 struct ContentView: View {
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        let url = URL(string: "pending...")!
+
+        // // fetching from local
+        // let url = Bundle.main.url(forResource: "scene", withExtension: "splineswift")!
+
+        try? SplineView(sceneFileURL: url).ignoresSafeArea(.all)
+        
     }
 }
+
+
 
 #Preview {
     ContentView()
